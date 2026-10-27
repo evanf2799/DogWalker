@@ -6,7 +6,7 @@ public class DogWalker {
         company = comp;
     }
     public int walkDogs(int hour) {
-        
+        int dogs = company.numAvaliableDogs(hour);
     }
     public int dogWalkShift(int startHour, int endHour) {
         
