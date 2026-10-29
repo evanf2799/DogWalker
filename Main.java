@@ -8,6 +8,8 @@ public class Main {
         DogWalkCompany[] companies = new DogWalkCompany[100];
         for (int i = 0; i < 100; i++)
             companies[i] = new DogWalkCompany(s.nextLine());
+        s.close();
+
         f = new File("walkers.txt");
         s = new Scanner(f);
         int company = s.nextInt();
