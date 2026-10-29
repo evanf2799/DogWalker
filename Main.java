@@ -12,13 +12,23 @@ public class Main {
 
         f = new File("walkers.txt");
         s = new Scanner(f);
-        int company = s.nextInt();
-        int maxDogs = s.nextInt();
-        DogWalker walker = new DogWalker(maxDogs, companies[company], 1);
-        int startHour = s.nextInt();
-        int endHour = s.nextInt();
-        int pay = walker.dogWalkShift(startHour, endHour);
-        System.out.println("$" + pay + " " + walker);
+        int totalWalkers = countLines(f);
+        int curWalker = 1;
+        int company;
+        int maxDogs;
+        DogWalker walker;
+        int startHour;
+        int endHour;
+        int pay;
+        while (curWalker <= totalWalkers) {
+            company = s.nextInt();
+            maxDogs = s.nextInt();
+            walker = new DogWalker(maxDogs, companies[company], curWalker);
+            startHour = s.nextInt();
+            endHour = s.nextInt();
+            pay = walker.dogWalkShift(startHour, endHour);
+            System.out.println("$" + pay + " " + walker);
+        }
         s.close();
     }
     public static int countLines(File f) throws IOException {
