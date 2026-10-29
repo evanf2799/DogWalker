@@ -21,4 +21,14 @@ public class Main {
         System.out.println("$" + pay + " " + walker);
         s.close();
     }
+    public static int countLines(File f) throws IOException {
+        Scanner s = new Scanner(f);
+        int line = 0;
+        while (s.hasNextLine()) {
+            s.nextLine();
+            line++;
+        }
+        s.close();
+        return line;
+    }
 }
