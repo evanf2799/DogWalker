@@ -1,9 +1,11 @@
 public class DogWalker {
     private int maxDogs;
     private DogWalkCompany company;
-    public DogWalker(int max, DogWalkCompany comp) {
+    private int walkerNumber;
+    public DogWalker(int max, DogWalkCompany comp, int num) {
         maxDogs = max;
         company = comp;
+        walkerNumber = num;
     }
     public int walkDogs(int hour) {
         int dogs = company.numAvaliableDogs(hour);
@@ -25,5 +27,8 @@ public class DogWalker {
             startHour ++;
         }
         return pay;
+    }
+    public String toString() {
+        return "" + walkerNumber;
     }
 }
