@@ -24,7 +24,7 @@ public class DogWalker {
             int dogs = walkDogs(startHour);
             pay += dogs * 5;
             if (dogs == maxDogs || startHour >= 9 && startHour <= 17) pay += 3;
-            startHour ++;
+            startHour++;
         }
         return pay;
     }
