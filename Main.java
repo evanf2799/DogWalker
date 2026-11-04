@@ -20,6 +20,7 @@ public class Main {
         int startHour;
         int endHour;
         int pay;
+        int totalPay = 0;
         while (curWalker <= totalWalkers) {
             company = s.nextInt();
             maxDogs = s.nextInt();
@@ -28,8 +29,10 @@ public class Main {
             endHour = s.nextInt();
             pay = walker.dogWalkShift(startHour, endHour);
             System.out.println("$" + pay + " " + walker);
+            totalPay += pay;
             curWalker++;
         }
+        System.out.println("Total amount earned: $" + totalPay);
         s.close();
     }
     public static int countLines(File f) throws IOException {
